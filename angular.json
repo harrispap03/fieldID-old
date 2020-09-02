@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fieldID"
+    }
+  },
+  "defaultProject": "fieldID",
+  "cli": {
+    "analytics": "4890b176-5320-4fc6-bd73-1798536b137d"
+  }
 }
