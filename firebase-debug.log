@@ -1,0 +1,30 @@
+[debug] [2020-09-02T12:17:27.264Z] ----------------------------------------------------------------------
+[debug] [2020-09-02T12:17:27.266Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting:TARGET_NAME
+[debug] [2020-09-02T12:17:27.266Z] CLI Version:   8.9.2
+[debug] [2020-09-02T12:17:27.266Z] Platform:      darwin
+[debug] [2020-09-02T12:17:27.266Z] Node Version:  v12.16.3
+[debug] [2020-09-02T12:17:27.267Z] Time:          Wed Sep 02 2020 15:17:27 GMT+0300 (Eastern European Summer Time)
+[debug] [2020-09-02T12:17:27.267Z] ----------------------------------------------------------------------
+[debug] [2020-09-02T12:17:27.267Z] 
+[debug] [2020-09-02T12:17:27.275Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-02T12:17:27.276Z] > authorizing via signed-in user
+[debug] [2020-09-02T12:17:27.276Z] [iam] checking project fieldid-907bc for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-02T12:17:27.278Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fieldid-907bc:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-02T12:17:28.242Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Sep 2020 12:17:28 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=762","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-02T12:17:28.243Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fieldid-907bc  
+ 
+[debug] [2020-09-02T12:17:28.546Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 02 Sep 2020 12:17:28 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'fieldid-907bc'...
+[info] 
+[info] i  deploying hosting 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/fieldid-907bc/overview
+[debug] [2020-09-02T12:17:30.175Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:84:36
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
