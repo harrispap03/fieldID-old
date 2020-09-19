@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { RecordComponent } from './record/record.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddNewUserComponent,
-    RecordComponent
+    RecordComponent,
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
