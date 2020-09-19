@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "fieldid-907bc"
+  },
+  "targets": {
+    "fieldid-907bc": {
+      "hosting": {
+        "fieldID": [
+          "fieldid-907bc"
+        ]
+      }
+    }
   }
 }
