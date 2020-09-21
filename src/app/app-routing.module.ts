@@ -9,8 +9,8 @@ import { RecordComponent } from './record/record.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'qrscanner', component: QrScannerComponent},
-  { path: 'newuser', component: AddNewUserComponent},
+  { path: 'qrScanner', component: QrScannerComponent},
+  { path: 'newUser', component: AddNewUserComponent},
   { path: 'record', component: RecordComponent}
 ];
 
