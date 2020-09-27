@@ -1,45 +1,10 @@
-fieldset {
-    width: 500px;
-    height: 30px;
-    background: #449bae;
-    border-radius: 30px;
-    margin: auto;
-    padding: 1em;
-    border: 0;
-}
-h1 {
-      text-align: center;
-}
-.leftBox{
-margin-top: 3em;
-margin-bottom: 15em;
-margin-left: 3em;
-margin-right: 3em;
-width: 40%;
-height: 50%;
-background: #449BAE;
-border-top-left-radius: 30px;
-border-bottom-left-radius: 30px;
-padding: 2px;
-}
-.userInfo{
-  margin-top: 20%;
-  margin-bottom: 10;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  border: 3px solid black;
-  padding: 20px;
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
   text-align: center;
-  border-radius: 30px;
 }
-.alert{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  width: 50%;
-  border: 3px solid black;
-  padding: 20px;
-  text-align: center;
+
+.example-full-width {
+  width: 100%;
 }
