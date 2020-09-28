@@ -7,10 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { RecordComponent } from './record/record.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+
+//Material Design stuff
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
+
+// QR scanner module
+
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    ZXingScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
