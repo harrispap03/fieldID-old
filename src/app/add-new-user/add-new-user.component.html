@@ -1,26 +1,32 @@
-<fieldset><h1> Create New User </h1></fieldset>
+<fieldset><h1>Create New User</h1></fieldset>
 
+<div class="card">
+  <div class="leftBox">
+    <form [formGroup]="myForm" (ngSubmit)="submitHandler()" class="form">
+      <mat-form-field class="full-width">
+        <mat-label>Όνομα</mat-label>
+        <input matInput placeholder="Πχ. Γιώργος" formControlName="name" />
+      </mat-form-field>
 
+      <mat-form-field class="full-width">
+        <mat-label>Επίθετο</mat-label>
+        <input matInput placeholder="Πχ. Γιώργος" formControlName="surname" />
+      </mat-form-field>
 
-<div class="leftBox">
-  <form class="form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Name</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Surname</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Surname</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Card Number</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-    <button mat-stroked-button>Create User</button>
-  </form>
+      <mat-form-field class="full-width">
+        <mat-label>Αριθμός Κάρτας</mat-label>
+        <input matInput placeholder="Πχ. 4859" formControlName="idNum" />
+      </mat-form-field>
+      <button mat-stroked-button>Δημιουργία Χρήστη</button>
+    </form>
+    <div *ngIf="success">
+      Ο χρήστης αποθηκεύτηκε!
+    </div>
+  </div>
+  <div class="rightBox">
+    <div class="qrCode">
+      <h3>goes here hehe</h3>
+    </div>
+  </div>
 </div>
 
