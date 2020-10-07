@@ -15,9 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // QR scanner module
-
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
-
+import { QRCodeModule } from 'angularx-qrcode';
 // Firestore
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore'
@@ -42,7 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     MatGridListModule,
-    ZXingScannerModule,
+    QRCodeModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
