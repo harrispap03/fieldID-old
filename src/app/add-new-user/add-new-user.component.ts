@@ -41,7 +41,6 @@ export class AddNewUserComponent implements OnInit {
       this.success = true;
       this.myForm.reset();
       
-      
     } catch(err){
       console.error(err)
     }

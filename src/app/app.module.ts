@@ -15,10 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // QR scanner module
-import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode'; // for creating the QR code 
 // Firestore
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore'
+
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';

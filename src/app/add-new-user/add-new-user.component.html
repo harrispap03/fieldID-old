@@ -1,4 +1,4 @@
-<fieldset><h1>Create New User</h1></fieldset>
+<fieldset><h1>Δημιουργία νέου χρήστη</h1></fieldset>
 
 <div class="card">
   <div class="leftBox">
@@ -10,7 +10,7 @@
 
       <mat-form-field class="full-width">
         <mat-label>Επίθετο</mat-label>
-        <input matInput placeholder="Πχ. Γιώργος" formControlName="surname" />
+        <input matInput placeholder="Πχ. Παπαδόπουλος" formControlName="surname" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
@@ -25,7 +25,6 @@
   </div>
   <div class="rightBox">
     <div class="qrCode">
-      <h3>goes here hehe</h3> 
       <qrcode [qrdata]="userId" [width]="256" [errorCorrectionLevel]="'M'"></qrcode> 
     </div>
   </div>

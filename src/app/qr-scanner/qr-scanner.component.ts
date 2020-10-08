@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qr-scanner.component.scss']
 })
 export class QrScannerComponent implements OnInit {
-
+  qrCode: string
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
 }
