@@ -16,6 +16,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 // QR scanner module
 import { QRCodeModule } from 'angularx-qrcode'; // for creating the QR code 
+import { ZXingScannerModule } from '@zxing/ngx-scanner'; // for reading the QR code
 // Firestore
 import { AngularFireModule } from '@angular/fire';
 
@@ -43,6 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     QRCodeModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    ZXingScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

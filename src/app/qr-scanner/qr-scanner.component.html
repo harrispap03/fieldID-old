@@ -1,0 +1,6 @@
+<zxing-scanner *ngIf="scannerEnabled"
+(scanSuccess)="onScanSuccess($event)"
+></zxing-scanner>
+
+<h1><strong> {{ result }} </strong></h1>
+ 
