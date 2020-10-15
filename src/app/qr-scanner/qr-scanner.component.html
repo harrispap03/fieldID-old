@@ -1,4 +1,5 @@
-<zxing-scanner *ngIf="scannerEnabled"
+<zxing-scanner 
+[enable]="scannerEnabled"
 (scanSuccess)="onScanSuccess($event)"
 ></zxing-scanner>
 
