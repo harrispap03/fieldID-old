@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class QrScannerComponent implements OnInit {
   scannerEnabled = true;
   result: string
-  tryHarder
+  
   
   constructor() { }
 
