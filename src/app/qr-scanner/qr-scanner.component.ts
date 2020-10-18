@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class QrScannerComponent implements OnInit {
   scannerEnabled = true;
   result: string
+  error: string
+  camFound: string
   
   
   constructor() { }
@@ -15,7 +17,13 @@ export class QrScannerComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  
+  camerasNotFound(e: Event) {
+    this.error = "Cameras not found"
+  }
+
+  cameraFound(e: Event) {
+    this.camFound = "Camera found"
+  }
 
   onScanSuccess(result: string){
     this.result = result

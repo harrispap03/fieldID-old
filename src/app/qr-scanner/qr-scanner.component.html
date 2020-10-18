@@ -1,7 +1,13 @@
 <zxing-scanner 
-[enable]="scannerEnabled"
-(scanSuccess)="onScanSuccess($event)"
+[formats]="['QR_CODE', 'EAN_13']"
+  (camerasFound)="cameraFound($event)"
+  (camerasNotFound)="camerasNotFound($event)"
+  (scanSuccess)="onScanSuccess($event)"
 ></zxing-scanner>
 
 <h1><strong> {{ result }} </strong></h1>
+
+<h1><strong> {{ error }} </strong></h1>
+
+<h1><strong> {{ camFound }} </strong></h1>
  
