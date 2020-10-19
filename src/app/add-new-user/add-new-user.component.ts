@@ -30,7 +30,7 @@ export class AddNewUserComponent implements OnInit {
     })
   }
   
-  // wait for the form to be submited it and then send it
+  // wait for the form to be submited it and then send it to the server
   async submitHandler(){
     this.loading = true;
 
