@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable} from 'rxjs';
-import { tap,first } from 'rxjs/operators';
-import { ValueAccessor } from '@ionic/angular/directives/control-value-accessors/value-accessor';
+
 
 
 

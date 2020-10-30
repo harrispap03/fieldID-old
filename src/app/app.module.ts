@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -45,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     ZXingScannerModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

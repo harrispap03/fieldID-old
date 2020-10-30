@@ -1,1 +1,14 @@
-<p>record works!</p>
+<!--
+ <h1>{{currentDate | date:'medium' }}</h1>  // Show the date
+-->
+
+
+<div *ngIf="user$ | async as user">
+    {{ user.name }}
+    {{ user.surname}}
+    {{user.idNum}}
+    
+  </div>
+
+
+
