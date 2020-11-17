@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @Component({  
@@ -8,21 +8,12 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 })
 
 export class QrScannerComponent {
-  scannerEnabled = true;
   result: string
   error: string
-  camFound: string
-  
-  constructor() { }
-  
+
   camerasNotFound(e: Event) {
     this.error = "Cameras not found"
   }
-
-  cameraFound(e: Event) {
-    this.camFound = "Camera found"
-  }
-
   onScanSuccess(result: string){
     this.result = result
   }
