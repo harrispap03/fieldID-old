@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, Subject } from 'rxjs';
-import { scan } from 'rxjs/operators'
-import { MatTableModule } from '@angular/material/table';
+import { scan, switchMap, map } from 'rxjs/operators'
+//import { MatTableModule } from '@angular/material/table';
 
 export interface User {  
+  idNum: number;
   name: string;
   surname: string;
-  idNum: number;
 }
 
 @Component({
@@ -18,21 +18,31 @@ export interface User {
 
 export class RecordComponent {
 
-  public readonly users$: Observable<User[]>;
+  public readonly users$: Observable<User[]>; // variable users$ which is an array observable of type user
 
-  private readonly _userList: Subject<User>;
+  public readonly user$: Observable<User> // Observable of type user
 
-  currentDate = Date.now();
+  private readonly _userList: Subject<User>; // Subject _userList of type of user
 
-  public readonly user$: Observable<User>;
+  private readonly userDoc: AngularFirestoreDocument<User>; // AFS document of type user
 
   private readonly userId = 'D7txRm9FLefmcoABWJgf'; // That id will change dynamically once I get the scanner to work
-  private readonly userDoc: AngularFirestoreDocument<User>;
-
+  
   constructor(private db: AngularFirestore) {
-    this.userDoc = db.doc<User>(`users/${this.userId}`);
-    this.user$ = this.userDoc.valueChanges();
-  } 
-}
+    
+    this.userDoc = db.doc<User>(`users/${this.userId}`); // Given a firestore document id retrieve the document with this id and store it in userDoc
+    this.user$ = this.userDoc.valueChanges(); // 
 
- 
+    this._userList = new Subject<User>(); // Make a new subject called _userList of type user
+
+    this.users$ = this._userList.pipe(
+      scan((userList:User[], newUser: User): User[] => [...userList, newUser], []) // Adds a user to the user list 
+    );
+
+   
+  } 
+  
+  public addUser(u: User): void{
+    this._userList.next(u);
+  }
+}

@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
 @Component({  
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.component.html',
   styleUrls: ['./qr-scanner.component.scss']
 })
 
-export class QrScannerComponent implements OnInit {
+export class QrScannerComponent {
   scannerEnabled = true;
   result: string
   error: string
   camFound: string
   
-  
   constructor() { }
-
-  ngOnInit(): void {
-  }
   
   camerasNotFound(e: Event) {
     this.error = "Cameras not found"
@@ -28,5 +26,4 @@ export class QrScannerComponent implements OnInit {
   onScanSuccess(result: string){
     this.result = result
   }
-
 }
