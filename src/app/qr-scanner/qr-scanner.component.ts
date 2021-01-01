@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { QrService } from '../qr.service';
+
 
 @Component({  
   selector: 'app-qr-scanner',
@@ -8,13 +9,27 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 })
 
 export class QrScannerComponent {
-  result: string
+  qrResult: string 
   error: string
+  
+  
+  constructor(public qrService: QrService) {
+    
+  }
 
-  camerasNotFound(e: Event) {
+  onScanSuccess(qrResult: string){
+    this.qrResult = qrResult
+    this.qrService.addNewUserToList(qrResult)
+  }
+  
+  
+
+  
+  
+
+  
+  Error(e: Event) {
     this.error = "Cameras not found"
   }
-  onScanSuccess(result: string){
-    this.result = result
-  }
 }
+

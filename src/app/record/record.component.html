@@ -6,6 +6,7 @@
     <th>Date</th>
   </tr>
   <tr *ngIf="user$ | async as user">
+    <td> {{_newUserId}} </td> 
     <td>{{user.name}}</td>
     <td>{{user.surname}}</td>
     <td>{{user.idNum}}</td>

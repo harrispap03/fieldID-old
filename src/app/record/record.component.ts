@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable, Subject } from 'rxjs';
-import { scan, switchMap, map } from 'rxjs/operators'
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { scan, switchMap, map, filter } from 'rxjs/operators'
 //import { MatTableModule } from '@angular/material/table';
 
 export interface User {  
@@ -16,9 +16,35 @@ export interface User {
   styleUrls: ['./record.component.scss']
 })
 
-export class RecordComponent {
+export class RecordComponent{
+  public readonly users$: Observable<User[]>;
+  public readonly user$: Observable<User>;
 
-  public readonly users$: Observable<User[]>; // variable users$ which is an array observable of type user
+  public _newUserId: BehaviorSubject<string> = new BehaviorSubject(null);
+  private _userList: User[] = [];
+
+  constructor(private db: AngularFirestore) {
+    this.users$ = this._newUserId.pipe(
+      filter((u) => !!u), // We don't want to work with null users
+      switchMap((userId) => {
+        return this.db.doc<User>(`users/${userId}`).valueChanges();
+      }),
+      map((user: User) => {
+        this._userList.push(user);
+        return this._userList;
+      })
+    );
+  }
+
+  receiveUserId(userId){
+    this._newUserId.next(userId);
+  }
+}
+
+/*export class RecordComponent {
+
+
+  public readonly users$: Observable<User[]>; // Observable of type user array
 
   public readonly user$: Observable<User> // Observable of type user
 
@@ -26,7 +52,7 @@ export class RecordComponent {
 
   private readonly userDoc: AngularFirestoreDocument<User>; // AFS document of type user
 
-  private readonly userId = 'D7txRm9FLefmcoABWJgf'; // That id will change dynamically once I get the scanner to work
+  public userId: string // user's id as an observable
   
   constructor(private db: AngularFirestore) {
     
@@ -38,11 +64,14 @@ export class RecordComponent {
     this.users$ = this._userList.pipe(
       scan((userList:User[], newUser: User): User[] => [...userList, newUser], []) // Adds a user to the user list 
     );
-
-   
   } 
   
+  receiveUserId($qrResult){
+    this.userId = $qrResult
+  }
+
   public addUser(u: User): void{
     this._userList.next(u);
   }
 }
+*/
