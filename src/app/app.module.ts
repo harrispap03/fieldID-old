@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 // QR scanner module
-import { QRCodeModule } from 'angularx-qrcode'; // for creating the QR code 
+import { QRCodeModule } from 'angularx-qrcode'; // for creating the QR code
 import { ZXingScannerModule } from '@zxing/ngx-scanner'; // for reading the QR code
 // Firestore
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +24,7 @@ import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+
 
 
 

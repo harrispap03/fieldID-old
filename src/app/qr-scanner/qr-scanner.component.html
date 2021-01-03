@@ -1,11 +1,9 @@
-<zxing-scanner 
+<zxing-scanner
 [formats]="['QR_CODE']"
   (scanSuccess)="onScanSuccess($event)"
   (camerasNotFound)="Error($event)"
 ></zxing-scanner>
 
-<h1><strong> {{ qrResult }} </strong></h1>
-
 <h1><strong> {{ error }} </strong></h1>
 
- 
+
