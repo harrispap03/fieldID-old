@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-
 
 @Component({
   selector: 'app-qr-scanner',
@@ -9,11 +8,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class QrScannerComponent {
   error: string;
-
+  userId: string;
+   data = {
+    firstName: 'Harry'
+  }
   constructor(private afs: AngularFirestore) {}
 
   onScanSuccess(qrResult: string) {
-    this.afs.collection('recentUsers').add(qrResult);
+    this.userId = qrResult;
+    this.afs.collection('recentUsers').doc(this.userId).set(this.data).then(value => console.log(value));
   }
 
   Error(e: Event) {
