@@ -16,9 +16,9 @@ export class QrScannerComponent {
   onScanSuccess(qrResult: string){
     this.userId = qrResult;
     this.afs.collection('users').doc(this.userId).get().toPromise()
-    .then(doc => { console.log( JSON.stringify(doc.data(), null, 2));})
+    .then(doc => doc.data())
+    .then(data => this.afs.collection('recentUsers').doc(this.userId).set(data));
   }
-
 
   Error(e: Event) {
     this.error = 'Cameras not found';
