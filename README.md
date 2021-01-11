@@ -1,6 +1,6 @@
 Hello there!
 
-This project is currently in progress. Lots of changes being made in this project will be problematic because I often use the repo as a way to get help from people and solve bugs/problems with my app.
+This project is currently in progress. Lots of changes being made in this project will be problematic because I often use the repo as a way to get help from people and solve bugs/problems on myapp.
 
 Documentation: https://docs.google.com/document/d/1h1QuJdW5HzyJUFGemWKOyNxf9axcxaCH4UbJz1n05MM/edit?usp=sharing
 
