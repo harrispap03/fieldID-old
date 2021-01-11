@@ -16,7 +16,6 @@ export interface User {
 export class RecordComponent implements OnInit {
   public users$;
 
-  array = []
   constructor(private afs: AngularFirestore){}
 
   ngOnInit(){

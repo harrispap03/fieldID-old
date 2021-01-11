@@ -9,17 +9,19 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class QrScannerComponent {
   error: string;
   userId: string;
-  data = {
-   firstName: 'Harry'
-  }
+  data = {};
+
   constructor(private afs: AngularFirestore) {}
 
-  onScanSuccess(qrResult: string) {
+  onScanSuccess(qrResult: string){
     this.userId = qrResult;
-    this.afs.collection('recentUsers').doc(this.userId).set(this.data /* + the data that's on this document on the users collection */);
+    this.afs.collection('users').doc(this.userId).get().toPromise()
+    .then(doc => { console.log( JSON.stringify(doc.data(), null, 2));})
   }
+
 
   Error(e: Event) {
     this.error = 'Cameras not found';
   }
 }
+
