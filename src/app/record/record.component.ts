@@ -14,18 +14,12 @@ export interface User {
   styleUrls: ['./record.component.scss'],
 })
 export class RecordComponent implements OnInit {
-  recentUserDoc;
-  user: Observable<any>;
+  public users$;
 
   array = []
   constructor(private afs: AngularFirestore){}
 
   ngOnInit(){
-    this.recentUserDoc = this.afs.collection('recentUsers');
-    this.user = this.recentUserDoc.valueChanges();
-  }
-
-  get userDoc(){
-    return this.recentUserDoc.ref.id;
+    this.users$ = this.afs.collection('recentUsers').valueChanges();
   }
 }

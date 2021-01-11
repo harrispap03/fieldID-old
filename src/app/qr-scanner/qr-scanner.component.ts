@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-qr-scanner',
@@ -10,15 +9,13 @@ import 'rxjs/add/operator/toPromise';
 export class QrScannerComponent {
   error: string;
   userId: string;
-  data = {}
-
+  data = {
+   firstName: 'Harry'
+  }
   constructor(private afs: AngularFirestore) {}
 
   onScanSuccess(qrResult: string) {
     this.userId = qrResult;
-    this.afs.collection('users').doc(this.userId).get().toPromise.then(snapshot =>{
-      this.data = snapshot.data();
-    });
     this.afs.collection('recentUsers').doc(this.userId).set(this.data /* + the data that's on this document on the users collection */);
   }
 
