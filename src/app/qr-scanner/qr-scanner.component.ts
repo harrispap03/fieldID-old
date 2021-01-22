@@ -17,7 +17,7 @@ export class QrScannerComponent {
     this.userId = qrResult;
     this.afs.collection('users').doc(this.userId).get().toPromise()
     .then(doc => doc.data())
-    .then(data => this.afs.collection('recentUsers').add(data));
+    .then(data => this.afs.collection('recentUsers').doc(this.userId).set(data));
   }
 
   Error(e: Event) {
