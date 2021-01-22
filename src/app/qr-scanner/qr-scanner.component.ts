@@ -18,7 +18,6 @@ export class QrScannerComponent {
     this.afs.collection('users').doc(this.userId).get().toPromise()
     .then(doc => doc.data())
     .then(data => this.afs.collection('recentUsers').add(data));
-    await new Promise(done => setTimeout(() => console.log('done'), 5000));
   }
 
   Error(e: Event) {
