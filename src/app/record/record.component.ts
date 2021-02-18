@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
