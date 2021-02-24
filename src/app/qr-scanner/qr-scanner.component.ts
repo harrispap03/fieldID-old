@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BehaviorSubject } from 'rxjs';
-import { filter, distinctUntilChanged } from 'rxjs/operators';
+import { filter, distinctUntilChanged, mergeMap } from 'rxjs/operators';
+
 @Component({
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.component.html',
@@ -10,19 +11,21 @@ import { filter, distinctUntilChanged } from 'rxjs/operators';
 export class QrScannerComponent {
   private qrResult$ = new BehaviorSubject(null);
   private sub;
-  private userInfo;
+  public userInfo;
+  private doc;
   error: string;
   userId: string;
-  data = {};
-
+  loginTime = 10;
   constructor(private afs: AngularFirestore) {
     this.sub = this.qrResult$.pipe(
       filter(id => !!id),
-      distinctUntilChanged()
-    ).subscribe( IncomingQRResult => {
-      console.log(IncomingQRResult)
-     this.userInfo = this.afs.collection('users').doc(IncomingQRResult).get()
-     console.log(this.userInfo)
+      distinctUntilChanged(),
+      mergeMap((IncomingQRResult ) => this.afs.collection('users').doc(IncomingQRResult).valueChanges())
+    ).subscribe( data => {
+      this.doc = data;
+      console.log(this.doc)
+      this.doc.push({currentTime : this.loginTime})
+      console.log(this.doc)
     });
   }
 
