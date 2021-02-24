@@ -2,5 +2,6 @@
     {{ user.idNum }}
     {{ user.name }}
     {{ user.surname }}
-    {{ user.checkInTime }}
+    {{ user.checkInTime.toDate() | date:'medium' }}
 </li>
+

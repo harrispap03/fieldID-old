@@ -22,7 +22,7 @@ export class QrScannerComponent {
       mergeMap((IncomingQRResult ) => this.afs.collection('users').doc(IncomingQRResult).valueChanges())
     ).subscribe( data => {
       this.doc = data;
-      this.doc.checkInTime = Date.now();
+      this.doc.checkInTime = new Date();
       this.afs.collection('recentUsers').add(this.doc);
     });
   }
@@ -36,7 +36,4 @@ export class QrScannerComponent {
   }
 }
 
-// this.userId = qrResult;
-//     this.afs.collection('users').doc(this.userId).get().toPromise()
-//     .then(doc => doc.data())
-//     .then(data => this.afs.collection('recentUsers').doc(this.userId).set(data));
+
