@@ -15,7 +15,6 @@ export class QrScannerComponent {
   private doc;
   error: string;
   userId: string;
-  loginTime = 10;
   constructor(private afs: AngularFirestore) {
     this.sub = this.qrResult$.pipe(
       filter(id => !!id),
@@ -23,9 +22,8 @@ export class QrScannerComponent {
       mergeMap((IncomingQRResult ) => this.afs.collection('users').doc(IncomingQRResult).valueChanges())
     ).subscribe( data => {
       this.doc = data;
-      console.log(this.doc)
-      this.doc.push({currentTime : this.loginTime})
-      console.log(this.doc)
+      this.doc.checkInTime = Date.now();
+      this.afs.collection('recentUsers').add(this.doc);
     });
   }
 
