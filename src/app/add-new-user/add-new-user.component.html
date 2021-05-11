@@ -1,26 +1,26 @@
-<fieldset><h1>Δημιουργία νέου χρήστη</h1></fieldset>
+<fieldset><h1>Create new user</h1></fieldset>
 
 <div class="card">
   <div class="leftBox">
     <form [formGroup]="myForm" (ngSubmit)="submitHandler()" class="form">
       <mat-form-field class="full-width">
-        <mat-label>Όνομα</mat-label>
-        <input matInput placeholder="Πχ. Γιώργος" formControlName="name" />
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="ex. George" formControlName="name" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <mat-label>Επίθετο</mat-label>
-        <input matInput placeholder="Πχ. Παπαδόπουλος" formControlName="surname" />
+        <mat-label>Surname</mat-label>
+        <input matInput placeholder="ex. Smith" formControlName="surname" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <mat-label>Αριθμός Κάρτας</mat-label>
-        <input matInput placeholder="Πχ. 4859" formControlName="idNum" />
+        <mat-label>Id Number</mat-label>
+        <input matInput placeholder="ex. 4859" formControlName="idNum" />
       </mat-form-field>
-      <button mat-stroked-button>Δημιουργία Χρήστη</button>
+      <button mat-stroked-button>Create</button>
     </form>
     <div class="successMessage" *ngIf="success">
-      Ο χρήστης αποθηκεύτηκε!
+      User Saved!
     </div>
   </div>
   <div class="rightBox">
