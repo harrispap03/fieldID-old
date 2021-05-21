@@ -9,10 +9,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AddNewUserComponent implements OnInit {
   myForm: FormGroup;
-
+  userId: string;
+  qrCodeCreated = false;
   loading = false;
   success = false;
-  userId;
+
   constructor(private fb: FormBuilder, private afs: AngularFirestore) {}
 
   // make the form
@@ -24,8 +25,8 @@ export class AddNewUserComponent implements OnInit {
     });
   }
 
-  // wait for the form to be submited and then send it to the server
-  async submitHandler() {
+  // wait for the form to be submited and then add the user to the db
+  async onSubmit() {
     this.loading = true;
 
     const formValue = this.myForm.value;
@@ -34,13 +35,14 @@ export class AddNewUserComponent implements OnInit {
       await this.afs
         .collection('users')
         .add(formValue)
-        .then((value) => (this.userId = value.id));
+        .then((user) => (this.userId = user.id));
       this.success = true;
-      this.myForm.reset();
     } catch (err) {
       console.error(err);
     }
-
+    
     this.loading = false;
+    this.qrCodeCreated = true;
+    this.myForm.reset();
   }
 }

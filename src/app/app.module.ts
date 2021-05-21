@@ -24,6 +24,7 @@ import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 
@@ -35,6 +36,7 @@ import { MatTableModule } from '@angular/material/table';
     AddNewUserComponent,
     RecordComponent,
     QrScannerComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

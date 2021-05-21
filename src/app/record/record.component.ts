@@ -1,7 +1,5 @@
-import { MatTableModule } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 export interface User {
   idNum: number;
@@ -9,17 +7,19 @@ export interface User {
   surname: string;
 }
 
+
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
   styleUrls: ['./record.component.scss'],
 })
 export class RecordComponent implements OnInit {
-  public users$;
+  users$;
+  displayedColumns: string[] = ['name', 'surname', 'idNum', 'checkInTime'];
 
   constructor(private afs: AngularFirestore){}
 
   ngOnInit(){
-    this.users$ = this.afs.collection('recentUsers').valueChanges();
+    this.users$ = this.afs.collection('recentUsers', ref => ref.orderBy('checkInTime', 'desc')).valueChanges();
   }
 }

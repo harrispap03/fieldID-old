@@ -1,0 +1,15 @@
+* {
+    margin:auto;
+    padding: 0.5% 5% 0.5% 5%;
+    background: #449bae;
+    display: flex;
+    justify-content: center;
+}
+
+.nav{
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  padding: 0.5% 5% 0.5% 5%;
+ }

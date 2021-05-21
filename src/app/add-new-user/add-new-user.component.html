@@ -1,32 +1,36 @@
-<fieldset><h1>Create new user</h1></fieldset>
-
-<div class="card">
-  <div class="leftBox">
-    <form [formGroup]="myForm" (ngSubmit)="submitHandler()" class="form">
-      <mat-form-field class="full-width">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="ex. George" formControlName="name" />
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>Surname</mat-label>
-        <input matInput placeholder="ex. Smith" formControlName="surname" />
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>Id Number</mat-label>
-        <input matInput placeholder="ex. 4859" formControlName="idNum" />
-      </mat-form-field>
-      <button mat-stroked-button>Create</button>
-    </form>
-    <div class="successMessage" *ngIf="success">
-      User Saved!
+<h1 class="title">Create new user</h1>
+  
+  <div class="card">
+    <div class="leftBox">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="ex. George" formControlName="name" />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <mat-label>Surname</mat-label>
+          <input matInput placeholder="ex. Smith" formControlName="surname" />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <mat-label>Id Number</mat-label>
+          <input matInput placeholder="ex. 4859" formControlName="idNum" />
+        </mat-form-field>
+        <button mat-stroked-button>Create</button>
+      </form>
+      <div class="successMessage" *ngIf="success">
+        User Saved!
+      </div>
+    </div>
+    <div class="rightBox">
+      <div class="qrCode" *ngIf="qrCodeCreated; else showInstructions">
+        <qrcode [qrdata]="userId" [width]="256" [errorCorrectionLevel]="'M'"></qrcode> 
+      </div>
+      <ng-template #showInstructions>
+        <p>Create a user and his unique QR code will appear here</p>
+      </ng-template> 
     </div>
   </div>
-  <div class="rightBox">
-    <div class="qrCode">
-      <qrcode [qrdata]="userId" [width]="256" [errorCorrectionLevel]="'M'"></qrcode> 
-    </div>
-  </div>
-</div>
+  
 

@@ -1,50 +1,49 @@
-* {
-  margin: 0;
-  padding: 0;
+.page {
+  background: #283941;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas: "welcome"
+                       "menu"
+                       "nav";
+  
 }
-h1 {
+
+.title {
+  grid-area: welcome;
   text-align: center;
-}
-.square {
-  width: 350px;
-  height: 350px;
   background: #449bae;
-  border-radius: 30px;
-}
-fieldset {
-  width: 500px;
-  height: 30px;
-  background: #449bae;
-  border-radius: 30px;
+  border-radius: 10px;
   margin: auto;
-  padding: 1em;
-  border: 0;
+  margin-bottom: 8%;
+  padding: 0.5% 5% 0.5% 5%;
 }
 
-#menu {
-  margin-top: 9em;
-  margin-bottom: 9em;
-  height: 100%; 
-  width: 100%;
+.navigation {
+  grid-area: nav;
   text-align: center;
+  background: #449bae;
+  border-radius: 10px;
+  margin:auto;
+  margin-top: 8%;
+  padding: 0.5% 5% 0.5% 5%
 }
-#newQR,
-#record,
-#scanner {
-  display: inline-block;
-  padding: 3em;
+.menu {
+  display: flex;
+  flex-flow: row wrap;
+  grid-area: menu;
+  justify-content: center;
+  align-items: center; 
 }
+
 .square {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  max-width: 350px;
+  // height: 350px;
   background: #449bae;
   border-radius: 30px;
-  margin: 7em;
+  margin: 2% 5% 2% 5%;
+  padding: 1%;
 }
-.QRcode, .record, .addUser{
-    text-align: center;
-    width: 330px;
-}
-
 
 
