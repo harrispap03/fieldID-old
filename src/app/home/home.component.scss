@@ -29,6 +29,7 @@
   padding: 0.5% 5% 0.5% 5%
 }
 .menu {
+  margin-top: 2%;
   display: flex;
   flex-flow: row wrap;
   grid-area: menu;
@@ -37,7 +38,8 @@
 }
 
 .square {
-  width: 100%;
+  width: 20%;
+  min-width: 100px;
   max-width: 350px;
   // height: 350px;
   background: #449bae;
